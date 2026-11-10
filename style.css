@@ -1,0 +1,419 @@
+
+/* =================================
+   ALL LANGUAGES DICTIONARY PRO
+   PROFESSIONAL MOBILE DESIGN
+================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #0878c9;
+  --secondary: #07518f;
+  --light: #eaf5ff;
+  --white: #ffffff;
+  --text: #202b38;
+  --muted: #718096;
+  --shadow: 0 4px 15px rgba(0,0,0,0.09);
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f1f4f8;
+  color: var(--text);
+  padding-bottom: 85px;
+}
+
+/* HEADER */
+
+.header {
+  height: 68px;
+  background: linear-gradient(120deg,#0878c9,#064c91);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 17px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow);
+}
+
+.header h1 {
+  font-size: 22px;
+  letter-spacing: .3px;
+}
+
+.header button {
+  background: transparent;
+  color: white;
+  font-size: 25px;
+}
+
+/* SIDE MENU */
+
+.side-menu {
+  position: fixed;
+  top: 68px;
+  left: -290px;
+  width: 270px;
+  height: calc(100vh - 68px);
+  background: white;
+  z-index: 200;
+  padding: 20px;
+  overflow-y: auto;
+  box-shadow: var(--shadow);
+  transition: .3s;
+}
+
+.side-menu.show {
+  left: 0;
+}
+
+.side-menu h2 {
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+.side-menu button {
+  width: 100%;
+  padding: 15px;
+  margin: 4px 0;
+  text-align: left;
+  background: #f3f8fc;
+  border-radius: 8px;
+  color: var(--text);
+}
+
+/* MAIN */
+
+main {
+  max-width: 850px;
+  margin: auto;
+  padding: 15px;
+}
+
+.page {
+  display: none;
+  animation: appear .25s ease;
+}
+
+.page.active {
+  display: block;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page h2 {
+  color: var(--primary);
+  margin: 12px 0;
+  font-size: 24px;
+}
+
+.page p {
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+/* WELCOME */
+
+.welcome {
+  background: linear-gradient(120deg,#0878c9,#063f83);
+  color: white;
+  padding: 27px 20px;
+  border-radius: 15px;
+  margin-bottom: 18px;
+}
+
+.welcome h2 {
+  color: white;
+  font-size: 24px;
+}
+
+.welcome p {
+  color: #e3f3ff;
+}
+
+/* SEARCH */
+
+.search-box {
+  display: flex;
+  gap: 8px;
+  margin: 18px 0;
+}
+
+.search-box input {
+  flex: 1;
+}
+
+.search-box button {
+  width: 55px;
+  background: var(--primary);
+  color: white;
+  border-radius: 10px;
+}
+
+/* DAILY WORD */
+
+.daily-card {
+  background: linear-gradient(130deg,#4ca8d4,#0878c9);
+  color: white;
+  padding: 24px;
+  border-radius: 15px;
+  margin: 18px 0;
+  box-shadow: var(--shadow);
+}
+
+.daily-card h1 {
+  font-size: 29px;
+  margin: 18px 0;
+}
+
+.daily-card p {
+  color: white;
+}
+
+.daily-card button {
+  background: white;
+  color: var(--primary);
+  padding: 12px 17px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+/* DASHBOARD */
+
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 13px;
+  margin: 20px 0;
+}
+
+.dashboard button {
+  min-height: 105px;
+  background: white;
+  border-radius: 13px;
+  color: var(--primary);
+  font-size: 31px;
+  box-shadow: var(--shadow);
+  transition: .2s;
+}
+
+.dashboard button:active {
+  transform: scale(.96);
+}
+
+.dashboard span {
+  display: block;
+  font-size: 13px;
+  color: #17618f;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* INPUTS */
+
+input, select, textarea {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #d5e0e9;
+  border-radius: 10px;
+  background: white;
+  color: #222;
+  outline: none;
+  margin: 12px 0;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px #0878c91a;
+}
+
+textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  color: var(--text);
+  font-weight: bold;
+}
+
+/* BUTTONS */
+
+.page > button {
+  background: var(--primary);
+  color: white;
+  padding: 14px 20px;
+  border-radius: 9px;
+  margin: 8px 4px 8px 0;
+}
+
+.page button:hover {
+  opacity: .9;
+}
+
+/* RESULT BOX */
+
+.result-box {
+  background: white;
+  padding: 20px;
+  border-radius: 13px;
+  margin: 18px 0;
+  min-height: 100px;
+  box-shadow: var(--shadow);
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+.result-box h2,
+.result-box h3 {
+  color: var(--primary);
+}
+
+/* LANGUAGE BUTTONS */
+
+#languageList {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 12px;
+  margin: 20px 0;
+}
+
+#languageList button {
+  padding: 17px 10px;
+  background: white;
+  color: var(--text);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  text-align: left;
+}
+
+/* LESSONS */
+
+.lesson-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin: 14px 0;
+  box-shadow: var(--shadow);
+}
+
+.lesson-card h3 {
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.lesson-card button {
+  padding: 11px 15px;
+  border-radius: 8px;
+  background: var(--primary);
+  color: white;
+}
+
+/* BOTTOM NAVIGATION */
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 72px;
+  background: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 -3px 15px #00000012;
+  z-index: 150;
+}
+
+.bottom-nav button {
+  background: transparent;
+  color: var(--primary);
+  font-size: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.bottom-nav span {
+  font-size: 11px;
+}
+
+/* DARK MODE */
+
+body.dark {
+  background: #121c29;
+  color: white;
+}
+
+body.dark .result-box,
+body.dark .lesson-card,
+body.dark .dashboard button,
+body.dark .bottom-nav,
+body.dark .side-menu {
+  background: #1e2b3b;
+  color: white;
+}
+
+body.dark .page p {
+  color: #c2d1e0;
+}
+
+body.dark input,
+body.dark select,
+body.dark textarea {
+  background: #25364a;
+  color: white;
+  border-color: #52677c;
+}
+
+/* MOBILE RESPONSIVE */
+
+@media(max-width:480px) {
+
+  main {
+    padding: 12px;
+  }
+
+  .dashboard {
+    gap: 10px;
+  }
+
+  .dashboard button {
+    min-height: 95px;
+    font-size: 27px;
+  }
+
+  .dashboard span {
+    font-size: 12px;
+  }
+
+  .welcome h2 {
+    font-size: 21px;
+  }
+
+  .page h2 {
+    font-size: 22px;
+  }
+
+}
