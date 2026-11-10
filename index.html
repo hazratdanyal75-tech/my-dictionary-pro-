@@ -1,0 +1,303 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0878c9">
+<title>All Languages Dictionary Pro</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <button onclick="toggleMenu()">☰</button>
+  <h1>Dictionary Pro</h1>
+  <button onclick="openPage('notifications')">🔔</button>
+</header>
+
+<nav id="sideMenu" class="side-menu">
+  <h2>📘 Dictionary Pro</h2>
+  <button onclick="openPage('home')">🏠 Home</button>
+  <button onclick="openPage('dictionary')">📖 Dictionary</button>
+  <button onclick="openPage('ai')">🤖 AI Dictionary</button>
+  <button onclick="openPage('translate')">🌐 Translate</button>
+  <button onclick="openPage('learn')">🎓 Learn English</button>
+  <button onclick="openPage('favorites')">❤️ Favorite</button>
+  <button onclick="openPage('history')">🕘 History</button>
+  <button onclick="openPage('settings')">⚙️ Settings</button>
+</nav>
+
+<main>
+
+<!-- HOME -->
+<section id="home" class="page active">
+
+  <div class="welcome">
+    <h2>Welcome to Dictionary Pro 👋</h2>
+    <p>Your world of languages.</p>
+  </div>
+
+  <div class="search-box">
+    <input id="homeSearch" placeholder="Search any word...">
+    <button onclick="homeSearchWord()">🔍</button>
+  </div>
+
+  <div class="daily-card">
+    <h3>⭐ WORD OF THE DAY</h3>
+    <h1 id="homeDailyWord">Reassurance</h1>
+    <p>دل کا بھروسہ</p>
+    <button onclick="openPage('daily')">Explore Word →</button>
+  </div>
+
+  <h2>All Dictionary Features</h2>
+
+  <div class="dashboard">
+    <button onclick="openPage('dictionary')">📖<span>Dictionary</span></button>
+    <button onclick="openPage('ai')">🤖<span>AI Dictionary</span></button>
+    <button onclick="openPage('translate')">🌐<span>Translate</span></button>
+    <button onclick="openPage('languages')">🌍<span>All Languages</span></button>
+    <button onclick="openPage('ocr')">📷<span>OCR Scanner</span></button>
+    <button onclick="openPage('test')">📝<span>English Test</span></button>
+    <button onclick="openPage('learn')">🎓<span>Learn English</span></button>
+    <button onclick="openPage('favorites')">❤️<span>Favorite</span></button>
+    <button onclick="openPage('thesaurus')">📚<span>Thesaurus</span></button>
+    <button onclick="openPage('editor')">✍️<span>Editor</span></button>
+    <button onclick="openPage('history')">🕘<span>History</span></button>
+    <button onclick="openPage('keyboard')">⌨️<span>Keyboard</span></button>
+    <button onclick="openPage('daily')">📅<span>Daily Word</span></button>
+    <button onclick="openPage('settings')">⚙️<span>Settings</span></button>
+    <button onclick="openPage('about')">ℹ️<span>About</span></button>
+  </div>
+
+</section>
+
+<!-- DICTIONARY -->
+<section id="dictionary" class="page">
+  <h2>📖 All Languages Dictionary</h2>
+  <p>Search words in different languages.</p>
+
+  <label>Select Language</label>
+  <select id="dictLanguage">
+    <option value="en">🇬🇧 English</option>
+    <option value="ur">🇵🇰 Urdu</option>
+    <option value="ar">🇸🇦 Arabic</option>
+    <option value="es">🇪🇸 Spanish</option>
+    <option value="fr">🇫🇷 French</option>
+    <option value="de">🇩🇪 German</option>
+    <option value="tr">🇹🇷 Turkish</option>
+    <option value="it">🇮🇹 Italian</option>
+    <option value="hi">🇮🇳 Hindi</option>
+    <option value="zh">🇨🇳 Chinese</option>
+    <option value="ja">🇯🇵 Japanese</option>
+    <option value="ko">🇰🇷 Korean</option>
+    <option value="ru">🇷🇺 Russian</option>
+    <option value="pt">🇵🇹 Portuguese</option>
+  </select>
+
+  <input id="dictionaryInput" placeholder="Enter a word...">
+  <button onclick="dictionarySearch()">Search Word</button>
+
+  <div id="dictionaryResult" class="result-box">
+    <h2>Word Details</h2>
+    <p>Meaning, pronunciation and examples will appear here.</p>
+  </div>
+</section>
+
+<!-- AI DICTIONARY -->
+<section id="ai" class="page">
+  <h2>🤖 AI Dictionary</h2>
+  <p>Explore detailed word explanations.</p>
+  <select id="aiLanguage">
+    <option value="en">English</option>
+    <option value="ur">Urdu</option>
+    <option value="roman">Roman Urdu</option>
+  </select>
+  <input id="aiInput" placeholder="Enter any word...">
+  <button onclick="askAI()">Ask AI</button>
+  <div id="aiResult" class="result-box">AI explanation will appear here.</div>
+</section>
+
+<!-- TRANSLATE -->
+<section id="translate" class="page">
+  <h2>🌐 Translate Text</h2>
+
+  <label>From</label>
+  <select id="fromLanguage">
+    <option value="en">English</option>
+    <option value="ur">Urdu</option>
+    <option value="ar">Arabic</option>
+    <option value="es">Spanish</option>
+    <option value="fr">French</option>
+    <option value="de">German</option>
+  </select>
+
+  <label>To</label>
+  <select id="toLanguage">
+    <option value="ur">Urdu</option>
+    <option value="en">English</option>
+    <option value="ar">Arabic</option>
+    <option value="es">Spanish</option>
+    <option value="fr">French</option>
+    <option value="de">German</option>
+    <option value="tr">Turkish</option>
+    <option value="hi">Hindi</option>
+  </select>
+
+  <textarea id="translateInput" placeholder="Enter your text..."></textarea>
+  <button onclick="translateText()">Translate Now</button>
+  <div id="translateResult" class="result-box">Translation appears here.</div>
+</section>
+
+<!-- LANGUAGES -->
+<section id="languages" class="page">
+  <h2>🌍 All Languages</h2>
+  <p>Choose your language.</p>
+  <div id="languageList">
+    <button onclick="selectLanguage('en','English')">🇬🇧 English</button>
+    <button onclick="selectLanguage('ur','Urdu')">🇵🇰 اردو</button>
+    <button onclick="selectLanguage('ar','Arabic')">🇸🇦 Arabic</button>
+    <button onclick="selectLanguage('tr','Turkish')">🇹🇷 Turkish</button>
+    <button onclick="selectLanguage('es','Spanish')">🇪🇸 Spanish</button>
+    <button onclick="selectLanguage('fr','French')">🇫🇷 French</button>
+    <button onclick="selectLanguage('de','German')">🇩🇪 German</button>
+    <button onclick="selectLanguage('it','Italian')">🇮🇹 Italian</button>
+    <button onclick="selectLanguage('hi','Hindi')">🇮🇳 Hindi</button>
+    <button onclick="selectLanguage('zh','Chinese')">🇨🇳 Chinese</button>
+    <button onclick="selectLanguage('ja','Japanese')">🇯🇵 Japanese</button>
+    <button onclick="selectLanguage('ko','Korean')">🇰🇷 Korean</button>
+    <button onclick="selectLanguage('ru','Russian')">🇷🇺 Russian</button>
+    <button onclick="selectLanguage('pt','Portuguese')">🇵🇹 Portuguese</button>
+  </div>
+  <p id="selectedLanguage">Selected: English</p>
+</section>
+
+<!-- OCR -->
+<section id="ocr" class="page">
+  <h2>📷 OCR Scanner</h2>
+  <p>Extract text from images.</p>
+  <input type="file" id="ocrImage" accept="image/*">
+  <button onclick="scanImage()">Scan Image</button>
+  <div id="ocrResult" class="result-box">Scanned text appears here.</div>
+</section>
+
+<!-- TEST -->
+<section id="test" class="page">
+  <h2>📝 English Test</h2>
+  <p>Test your vocabulary knowledge.</p>
+  <div id="quizArea">
+    <h3 id="question">Ready for your test?</h3>
+    <div id="answers"></div>
+  </div>
+  <button onclick="startTest()">Start Test</button>
+  <p id="testScore">Score: 0</p>
+</section>
+
+<!-- LEARN -->
+<section id="learn" class="page">
+  <h2>🎓 Learn English</h2>
+  <div class="lesson-card">
+    <h3>Basic English</h3>
+    <button onclick="openLesson('basic')">Start Lesson →</button>
+  </div>
+  <div class="lesson-card">
+    <h3>Daily Vocabulary</h3>
+    <button onclick="openLesson('vocabulary')">Explore →</button>
+  </div>
+  <div class="lesson-card">
+    <h3>English Sentences</h3>
+    <button onclick="openLesson('sentences')">Practice →</button>
+  </div>
+  <div class="lesson-card">
+    <h3>Speaking Practice</h3>
+    <button onclick="openLesson('speaking')">Start →</button>
+  </div>
+  <div id="lessonDetails" class="result-box">Choose a lesson.</div>
+</section>
+
+<!-- FAVORITES -->
+<section id="favorites" class="page">
+  <h2>❤️ My Favorites</h2>
+  <div id="favoriteList"></div>
+</section>
+
+<!-- HISTORY -->
+<section id="history" class="page">
+  <h2>🕘 Search History</h2>
+  <div id="historyList"></div>
+  <button onclick="clearHistory()">Clear History</button>
+</section>
+
+<!-- THESAURUS -->
+<section id="thesaurus" class="page">
+  <h2>📚 Thesaurus</h2>
+  <input id="thesaurusInput" placeholder="Enter a word...">
+  <button onclick="searchThesaurus()">Search</button>
+  <div id="thesaurusResult" class="result-box"></div>
+</section>
+
+<!-- EDITOR -->
+<section id="editor" class="page">
+  <h2>✍️ Text Editor</h2>
+  <textarea id="editorText" placeholder="Write your text..."></textarea>
+  <button onclick="checkGrammar()">Check Text</button>
+  <button onclick="clearEditor()">Clear</button>
+  <div id="editorResult" class="result-box"></div>
+</section>
+
+<!-- KEYBOARD -->
+<section id="keyboard" class="page">
+  <h2>⌨️ Language Keyboard</h2>
+  <button onclick="setKeyboard('en')">English</button>
+  <button onclick="setKeyboard('ur')">اردو</button>
+  <textarea id="keyboardText" placeholder="Write here..."></textarea>
+  <p id="keyboardStatus">English selected.</p>
+</section>
+
+<!-- DAILY WORD -->
+<section id="daily" class="page">
+  <h2>📅 Word Of The Day</h2>
+  <div class="result-box">
+    <h1 id="dailyWord">Reassurance</h1>
+    <p id="dailyMeaning">دل کا بھروسہ</p>
+    <button onclick="dailyPronunciation()">🔊 Listen</button>
+  </div>
+  <button onclick="nextDailyWord()">Next Word →</button>
+</section>
+
+<!-- NOTIFICATIONS -->
+<section id="notifications" class="page">
+  <h2>🔔 Notifications</h2>
+  <button onclick="enableNotifications()">Enable Notifications</button>
+  <p id="notificationStatus">Notifications are off.</p>
+</section>
+
+<!-- SETTINGS -->
+<section id="settings" class="page">
+  <h2>⚙️ Settings</h2>
+  <button onclick="toggleDarkMode()">🌙 Dark Mode</button>
+  <button onclick="openPage('languages')">🌍 Language Settings</button>
+  <button onclick="openPage('about')">ℹ️ About App</button>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="page">
+  <h2>📘 About Dictionary Pro</h2>
+  <p>All Languages Dictionary</p>
+  <p>Search • Translate • Learn • Explore</p>
+  <p>Version 1.0</p>
+</section>
+
+</main>
+
+<footer class="bottom-nav">
+  <button onclick="openPage('home')">🏠<span>Home</span></button>
+  <button onclick="openPage('dictionary')">📖<span>Dictionary</span></button>
+  <button onclick="openPage('translate')">🌐<span>Translate</span></button>
+  <button onclick="openPage('favorites')">❤️<span>Favorite</span></button>
+  <button onclick="openPage('settings')">⚙️<span>Settings</span></button>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
